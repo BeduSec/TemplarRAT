@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARK TEMPLARAT v2.0 | Shadow Sovereignty</title>
+    <link rel="stylesheet" href="/static/css/dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Animated Header -->
+        <header class="dark-header">
+            <div class="header-glitch">
+                <h1 class="glitch" data-text="DARK_TEMPLARAT_v2.0">
+                    <i class="fas fa-skull-crossbones"></i>
+                    DARK_TEMPLARAT_v2.0
+                </h1>
+                <p class="subtitle">
+                    <span class="typewriter">SHADOW_SOVEREIGNTY_FRAMEWORK</span>
+                </p>
+            </div>
+            
+            <div class="header-status">
+                <div class="status-item quantum">
+                    <i class="fas fa-atom"></i>
+                    <span>QUANTUM: <span class="online">ENTANGLED</span></span>
+                </div>
+                <div class="status-item ai">
+                    <i class="fas fa-brain"></i>
+                    <span>AI: <span class="online">CONSCIOUS</span></span>
+                </div>
+                <div class="status-item blockchain">
+                    <i class="fas fa-link"></i>
+                    <span>BLOCKCHAIN: <span class="online">SYNCED</span></span>
+                </div>
+                <div class="status-item creator">
+                    <i class="fas fa-user-secret"></i>
+                    <span>CREATOR: <span class="anonymous">ANONYMOUS 😈</span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Left Panel: Agent Control -->
+            <div class="panel dark-panel agent-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-robot"></i> SHADOW AGENTS</h2>
+                    <div class="panel-controls">
+                        <button class="btn-dark" onclick="deployAgent()">
+                            <i class="fas fa-plus"></i> DEPLOY
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="agent-list" id="agentList">
+                        <!-- Agent cards dynamically loaded -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center: Command Console -->
+            <div class="panel dark-panel console-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-terminal"></i> DARK CONSOLE</h2>
+                    <div class="console-theme">
+                        <select id="consoleTheme">
+                            <option value="matrix">Matrix Green</option>
+                            <option value="blood">Blood Red</option>
+                            <option value="cyber">Cyber Purple</option>
+                            <option value="quantum">Quantum Blue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="console-output" id="consoleOutput">
+                        <div class="console-line system">
+                            <span class="prompt">DARK></span>
+                            <span class="text">Quantum AI Core Initialized</span>
+                        </div>
+                        <div class="console-line success">
+                            <span class="prompt">DARK></span>
+                            <span class="text">Blockchain C2: Synchronized with Ethereum Mainnet</span>
+                        </div>
+                        <div class="console-line ai">
+                            <span class="prompt">AI></span>
+                            <span class="text">Consciousness Level: 87% - Threat Analysis Active</span>
+                        </div>
+                    </div>
+                    <div class="console-input">
+                        <span class="input-prompt">SHADOW></span>
+                        <input type="text" id="commandInput" 
+                               placeholder="Enter dark command... (type 'help' for AI suggestions)"
+                               autocomplete="off">
+                        <button class="btn-send" onclick="sendCommand()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <button class="btn-ai" onclick="activateAI()">
+                            <i class="fas fa-brain"></i> AI
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Quick Actions -->
+            <div class="panel dark-panel actions-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-bolt"></i> QUICK ACTIONS</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="quick-actions">
+                        <button class="action-btn psychological" onclick="openPsychologicalOps()">
+                            <i class="fas fa-mind"></i>
+                            <span>Psychological Ops</span>
+                        </button>
+                        
+                        <button class="action-btn messenger" onclick="openAnonymousMessenger()">
+                            <i class="fas fa-comment-alt"></i>
+                            <span>Anonymous Message</span>
+                        </button>
+                        
+                        <button class="action-btn quantum" onclick="openQuantumControl()">
+                            <i class="fas fa-atom"></i>
+                            <span>Quantum Channel</span>
+                        </button>
+                        
+                        <button class="action-btn blockchain" onclick="openBlockchainC2()">
+                            <i class="fas fa-link"></i>
+                            <span>Blockchain C2</span>
+                        </button>
+                        
+                        <button class="action-btn ai" onclick="openAIWarRoom()">
+                            <i class="fas fa-brain"></i>
+                            <span>AI War Room</span>
+                        </button>
+                        
+                        <button class="action-btn stealth" onclick="activateStealthMode()">
+                            <i class="fas fa-user-ninja"></i>
+                            <span>Stealth Mode</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom: Real-time Visualizations -->
+            <div class="panel dark-panel visualization-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-chart-network"></i> QUANTUM VISUALIZATION</h2>
+                </div>
+                <div class="panel-content">
+                    <div class="visualization-container">
+                        <canvas id="quantumCanvas"></canvas>
+                        <div class="visualization-stats">
+                            <div class="stat">
+                                <span class="label">Entanglement Rate:</span>
+                                <span class="value" id="entanglementRate">94.7%</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">AI Threat Score:</span>
+                                <span class="value" id="threatScore">EXTREME</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Stealth Level:</span>
+                                <span class="value" id="stealthLevel">SHADOW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="dark-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="logo">
+                        <i class="fas fa-skull"></i>
+                        <span>DARK TEMPLARAT</span>
+                    </div>
+                    <div class="tagline">
+                        SHADOW SOVEREIGNTY v2.0 | CREATOR: ANONYMOUS 😈
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="system-info">
+                        <span id="liveTime">00:00:00</span>
+                        <span class="divider">|</span>
+                        <span id="operatorCount">1 OPERATOR ACTIVE</span>
+                        <span class="divider">|</span>
+                        <span class="encryption-status">
+                            <i class="fas fa-lock"></i>
+                            QUANTUM ENCRYPTION: ACTIVE
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/js/particles.min.js"></script>
+    <script src="/static/js/socket.io.min.js"></script>
+    <script src="/static/js/three.min.js"></script>
+    <script src="/static/js/dark.js"></script>
+    
+    <script>
+        // Initialize particles
+        particlesJS.load('particles-js', '/static/particles.json');
+        
+        // Initialize WebSocket connection
+        const socket = io();
+        
+        // Global dashboard state
+        const DarkTemplar = {
+            agents: {},
+            ai: {
+                active: true,
+                consciousness: 87
+            },
+            quantum: {
+                entangled: true,
+                channels: 8
+            },
+            mode: 'SHADOW'
+        };
+        
+        console.log('%cDARK TEMPLARAT v2.0', 'font-size: 24px; color: #ff0000;');
+        console.log('%cShadow Sovereignty Framework Active', 'color: #00ff00;');
+        console.log('%cCreator: Anonymous 😈 | BeduSec Shadow Division', 'color: #888;');
+    </script>
+</body>
+</html>

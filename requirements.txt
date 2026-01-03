@@ -1,0 +1,18 @@
+# Dark Templarat Requirements
+web3>=6.0.0
+stem>=1.8.0
+flask>=2.0.0
+flask-socketio>=5.0.0
+cryptography>=36.0.0
+qrcode>=7.0
+opencv-python>=4.5.0
+pillow>=9.0.0
+numpy>=1.21.0
+torpy>=1.1.4
+aiohttp>=3.8.0
+aiosqlite>=0.17.0
+python-dotenv>=0.19.0
+colorama>=0.4.4
+requests>=2.27.0
+pycryptodome>=3.14.0
+# Optional: torch, tensorflow for AI features
