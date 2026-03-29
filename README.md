@@ -96,8 +96,7 @@ We welcome contributions from authorized security researchers. Please follow res
 📞 Contact
 
 · GitHub: BeduSec
-· Security: security@bedusec.com
-
+· Security:bedusec.github.io
 ⭐ Star History
 
 If you find this project useful, please give it a star!
